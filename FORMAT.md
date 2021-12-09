@@ -1,1 +1,1 @@
-# stirng.Format
+# String.Format
