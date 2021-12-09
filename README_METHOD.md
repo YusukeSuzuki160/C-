@@ -49,15 +49,85 @@ string str = "abcde";
 int index1 = str.IndexOf('d'); //3
 int index2 = str.IndexOf('z'); //-1
 int index3 = str.IndexOf("cde"); //2
+int index4 = str.IndexOf('a', index);
+int index5 = str.IndexOf('a', 0, 3); //-1
+int index6 = str.IndexOf("a", StringComparision.OrdinalIgnoreCase);
 /* 見つからなかったら-1                          
  *第二引数に数値(startIndex)を指定することで、そこから検索が可能                              *
  *第三引数に数値(count)を指定すると、検索対象がstartIndex ~ countになる                       *
  *これらの後にStringComparision.OrdinalIgnoreCaseを指定すると、大文字小文字の区別なく検索できる*
  *ただし、この場合、検索文字は一文字でもstringでないといけない                                 */
- int lastIndex = str.LastIndexf('a'); //7 検索は後ろからだが、結果は先頭からのものと同じ
- 
- 
+int lastIndex = str.LastIndexf('a'); //7 検索は後ろからだが、結果は先頭からのものと同じ
 
+string str = "I have a pen";
+char[] chars = new char[] { 'a', 'h', 'p' };
+int index1 = str.IndexOfAny(chars); //2
+int index2 = str.IndexOfAny(chars, 5); //7
+int index3 = str.IndexOfAny(chars, 5, 2); //-1 5文字目から2文字分を検索
+/*string型の検索と、大文字小文字の区別のない検索はできない*/
+
+int index1 = str.LastIndexOfAny(chars); //9
+int index2 = str.LastIndexOfAny(chars, 5); //3
+int index3 = str.LastIndexOfAny(chars, 5, 2); //-1
+/*IndexOfAnyの後方検索版*/
+
+string str = "I have a pen";
+bool contains1 = str.Contains("ve a"); //true
+bool contains2 = str.Contains("apen"); //false
+/*文字列に特定の文字列が含まれるかを判定する*/
+
+string str = "I have a pen";
+bool startWith1 = str.StartsWith("I h"); //true
+bool startWith2 = str.StartsWith("have"); //false
+
+bool endsWith1 = str.EndsWith("en"); //true
+bool endsWith2 = str.EndsWith("a"); //false
+/*文字列が特定の文字列で開始する(終了する)かを判定する。                                      *
+ *第二引数にStringComparision.OrdinalIgnoreCaseを指定して、大文字小文字の区別をしないことも可能*/
+
+string str = "Pencil";
+bool op = str == "Pensil"; //true
+bool equals = str.Equals("Pensil"); //true
+/*いわゆる等価演算子のオーバーロード*
+ *大文字小文字を区別しないことも可能*
+ *nullチェックはできない         */
+string str = null;
+bool equals = string.Equals(str, null); //true
+/*静的メソッドならばnullチェック可能*/
+
+string str = "I have a pen";
+string subString1 = str.Substring(7); //開始位置から末尾まで取得
+string subString2 = str.Substring(7, 3); //開始位置からn文字取得
+
+string str = "I have a pen";
+string remove1 = str.Remove(6); //6文字目から末尾まで削除
+string remove2 = str.Remove(6, 3); //6文字目から3文字を削除
+
+string replace1 = str.Replace("a pen", "an apple");
+string replace2 = str.Replace(" ", string.Empty); //半角スペースをすべて削除
+
+string str1 = "1";
+string str2 = "20";
+str1 = str1.PadLeft(4); //指定の文字数に達するまで左側を空白で埋める。
+str2 = str2.PadRight(4); //右端を空白で埋める。
+
+string str1 = "1";
+string str2 = "20";
+str1 = str1.PadLeft(4, '0'); //0001
+str2 = str2.PadLeft(4, '*'); //20**
+
+string str1 = "Apple";
+string str2 = "Orange";
+string str3 = "Grape";
+
+int compare1 = string.Compare(str1, str2); //-1
+int compare2 = string.Compare(str2, str3); //-1
+int compare3 = stirng.Compare(str1, str1); //0
+/*２つの文字列を比較し、並べ替えに使用する順序を整数で返す。第一引数のほうが辞書順で先なら-1、あとなら1、同一なら0を返す。* 
+ *大文字小文字を区別しないことも可能                                                                        */
+
+/*string.Formatは別途記載*/
 ```
+/*参考 https://programming.pc-note.net/csharp/string_method.html */
 
 
