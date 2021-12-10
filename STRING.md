@@ -1,5 +1,5 @@
 #Stringクラス
-```
+```C#
 string s1; //宣言
 
 char[] chars = new char[] {'a', 'b', 'c7', 'd', 'e', 'f', 'g' }
