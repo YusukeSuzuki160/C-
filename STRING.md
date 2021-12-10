@@ -1,4 +1,5 @@
-#Stringクラス
+# Stringクラス
+
 ```C#
 string s1; //宣言
 
@@ -9,25 +10,25 @@ string s3 = new string(chars, 1, 3); //１文字目から３文字目までをst
 string s4 = new string('a', 10); //文字'a'を１０文字代入
 string s3 = "abcdefg";　//初期化
 ```
-#string.IsNullOrEmpty(string)
+## string.IsNullOrEmpty(string)
 ```C#
 string.IsNullOrEmpty(str); //引数の文字列がnullもしくは空文字の時にtrueを返す
 ```
-#str.ToUpper; str.ToLower
+## str.ToUpper; str.ToLower
 ```C#
 string strUpper = str.ToUpper; // 文字列を大文字変換
 string strLower = str.ToLower; // 文字列を小文字変換
 ```
-#string.Concat(string, string); str1 + str2;
+## string.Concat(string, string); str1 + str2;
 ```C#
 string concat1 = string.Concat(str1, str2); //
 string concat2 = str1 + str2; //どちらも文字列結合。string.Concatの引数は４つまで
 ```
-#string.Join(string, string[])
+## string.Join(string, string[])
 ```C#
 string join = string.Join(":", strs); //string型配列に対して、区切り文字で文字列を連結。区切り無しなら、第一引数にstring.Emotyを指定
 ```
-#str.Split(char or char[] or string[], int, StringSplitOptions)
+## str.Split(char or char[] or string[], int, StringSplitOptions)
 ```C#
 string[] split = str.Split(','); //文字列を区切り文字で分割して、文字列配列に格納する。区切り文字は複数指定可能。
 string[] split2 = str.Split(new char[] { '+', '-', '=' }, 3); //第二引数に数値を指定すると戻り値の配列の要素数を制限できる。
@@ -35,14 +36,14 @@ string str = "Apple, Grape, Orahge";
 string[] split = str.Split(new char[] ( ', ', ' ' ), StringSplitOptions.RemoveEmptyEntries); //文字列分割の際に、要素数がゼロになる要素が省かれる。
 string[] split = str.Split(new string[] {","}, StringSplitOptions.None); //区切り文字に文字列を使用、戻り値の配列にからの要素が含まれていてもそのまま。
 ```
-#str.Trim(); str.TrimStart(); str.TrimEnd();
+## str.Trim(); str.TrimStart(); str.TrimEnd();
 ```C#
 string str = " I have a pen ";
 strinng trim = str.Trim(); // "I have a pen" 文字列の前後にある不要な空白を除去(Tabは消えない)
 string trimStart = str.TrimStart(); // "I have a pen "　文字列の先頭の空白を除去(Tabは消えない)
 string trimEnd = str.TrimEnd(); // " I have a pen"　文字列の末尾の空白を除去(Tabは消えない)
 ```
-#str.IndexOf(char, int, int, StringComparision);
+## str.IndexOf(char, int, int, StringComparision);
 ```C#
 string str = "abcde";
 int index1 = str.IndexOf('d'); //3
@@ -70,14 +71,14 @@ int index2 = str.LastIndexOfAny(chars, 5); //3
 int index3 = str.LastIndexOfAny(chars, 5, 2); //-1
 /*IndexOfAnyの後方検索版*/
 ```
-#str.Contaions(string);
+## str.Contaions(string);
 ```C#
 string str = "I have a pen";
 bool contains1 = str.Contains("ve a"); //true
 bool contains2 = str.Contains("apen"); //false
 /*文字列に特定の文字列が含まれるかを判定する*/
 ```
-#str.StartWith(string); str.Endwith(string);
+## str.StartWith(string); str.Endwith(string);
 ```C#
 string str = "I have a pen";
 bool startWith1 = str.StartsWith("I h"); //true
@@ -88,7 +89,7 @@ bool endsWith2 = str.EndsWith("a"); //false
 /*文字列が特定の文字列で開始する(終了する)かを判定する。                                      *
  *第二引数にStringComparision.OrdinalIgnoreCaseを指定して、大文字小文字の区別をしないことも可能*/
 ```
-#str.Equal(string); string.Equal(string, string); str1 == str2;
+## str.Equal(string); string.Equal(string, string); str1 == str2;
 ```C#
 string str = "Pencil";
 bool op = str == "Pensil"; //true
@@ -100,24 +101,24 @@ string str = null;
 bool equals = string.Equals(str, null); //true
 /*静的メソッドならばnullチェック可能*/
 ```
-#str.Substring(int, int);
+## str.Substring(int, int);
 ```C#
 string str = "I have a pen";
 string subString1 = str.Substring(7); //開始位置から末尾まで取得
 string subString2 = str.Substring(7, 3); //開始位置からn文字取得
 ```
-#str.Remove(int, int);
+## str.Remove(int, int);
 ```C#
 string str = "I have a pen";
 string remove1 = str.Remove(6); //6文字目から末尾まで削除
 string remove2 = str.Remove(6, 3); //6文字目から3文字を削除
 ```
-#str.Replace(string, string);
+## str.Replace(string, string);
 ```C#
 string replace1 = str.Replace("a pen", "an apple");
 string replace2 = str.Replace(" ", string.Empty); //半角スペースをすべて削除
 ```
-#str.PadLeft(int, char); str.PadRight(int, char);
+## str.PadLeft(int, char); str.PadRight(int, char);
 ```C#
 string str1 = "1";
 string str2 = "20";
@@ -129,7 +130,7 @@ string str2 = "20";
 str1 = str1.PadLeft(4, '0'); //0001
 str2 = str2.PadLeft(4, '*'); //20**
 ```
-#string.Compare(string, string);
+## string.Compare(string, string);
 ```C#
 string str1 = "Apple";
 string str2 = "Orange";
