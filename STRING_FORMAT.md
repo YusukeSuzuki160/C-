@@ -1,10 +1,15 @@
 # String.Format
 ## 記法
 String.Format("書式", object0, object1, object2,...);
+
 書式は、{index[,aligment][:formatstring]}のように書く
+
 indexは第二引数以降のオブジェクトのインデックス番号を指定する。alignmentでは、書式フィールドの幅を指定する。
+
 正の値であれば右揃え、負の値であれば左揃えで出力される。指定した値の桁数、字数で出力される。
+
 formatStringでは、書式指定子を指定する。
+
 例
 
 ```C#
