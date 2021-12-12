@@ -142,6 +142,15 @@ int compare3 = stirng.Compare(str1, str1); //0
 /*２つの文字列を比較し、並べ替えに使用する順序を整数で返す。第一引数のほうが辞書順で先なら-1、あとなら1、同一なら0を返す。* 
  *大文字小文字を区別しないことも可能                                                                        */
 ```
+
+## エスケープシーケンス
+\n 改行
+\t タブ文字
+\' 単一引用符
+\" 二重引用符
+\\ \記号自体
+\uXXXX XXXXの部分に16進数で、文字コードを直接記述
+
 string.Formatは別途記載
 
 参考 https://programming.pc-note.net/csharp/string_method.html 
